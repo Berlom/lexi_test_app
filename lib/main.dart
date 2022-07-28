@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 
 import 'package:flutter/material.dart';
-import 'package:lexi_mobile/views/code_en_ligne_user_view.dart';
 import 'package:provider/provider.dart';
 import 'globals.dart';
 import 'vm/event_provider_model.dart';
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
         builder: (_, ThemeData current, __) {
           return MaterialApp(
             title: "My First App",
-            home: CodeEnLigneUserView(),
+            home: LandingPageView(),
             theme: current,
           );
         },

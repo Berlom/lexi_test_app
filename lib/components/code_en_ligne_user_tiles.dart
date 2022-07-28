@@ -21,7 +21,6 @@ class CodeEnLigneUserTiles extends StatelessWidget {
             ),
           ],
           border: Border.all(color: Colors.grey),
-          color: Colors.white,
           borderRadius: BorderRadius.circular(20)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

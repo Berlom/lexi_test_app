@@ -23,21 +23,23 @@ class EventViewingPage extends StatelessWidget {
           leading: CloseButton(),
           actions: buildViewingActions(context, event),
         ),
-        body: ListView(
-          padding: EdgeInsets.all(32),
-          children: <Widget>[
-            buildDateTime(event),
-            SizedBox(height: 32),
-            Text(
-              event.title,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 24),
-            Text(
-              event.description,
-              style: TextStyle(color: Colors.black, fontSize: 18),
-            ),
-          ],
+        body: SingleChildScrollView(
+          child: ListView(
+            padding: EdgeInsets.all(32),
+            children: <Widget>[
+              buildDateTime(event),
+              SizedBox(height: 32),
+              Text(
+                event.title,
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 24),
+              Text(
+                event.description,
+                style: TextStyle(fontSize: 18),
+              ),
+            ],
+          ),
         ),
       );
 

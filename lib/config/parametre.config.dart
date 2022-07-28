@@ -17,7 +17,7 @@ const Map ParameterConfig = {
     "d1": 'D1'
     // h: 'H'
   },
-  "logo": "images/logo.png",
+  "logo": "assets/images/logo.png",
   "type": {1: 'Code', 2: 'Conduite'},
   "examStatus": {
     1: 'Planifié',

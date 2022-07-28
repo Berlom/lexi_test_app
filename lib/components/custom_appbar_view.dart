@@ -8,11 +8,11 @@ import '../views/login_view.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
-  final Color backgroudColor;
+  final Color? backgroudColor;
   const CustomAppBar({
     Key? key,
     required this.title,
-    required this.backgroudColor,
+    this.backgroudColor,
   }) : super(key: key);
   @override
   Size get preferredSize => Size.fromHeight(60.0);
@@ -22,10 +22,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       centerTitle: true,
       // automaticallyImplyLeading: true,
-      iconTheme: IconThemeData(color: Colors.white),
-      backgroundColor: backgroudColor,
-      elevation: 0,
-      title: Text(title),
+      iconTheme: IconThemeData(color: Color.fromARGB(255, 19, 188, 175)),
+      // backgroundColor: backgroudColor,
+      elevation: 10,
+      title: Text(
+        title,
+        style: Theme.of(context)
+            .textTheme
+            .headline3!
+            .copyWith(color: Color.fromARGB(255, 19, 188, 175)),
+      ),
       actions: [
         IconButton(icon: Icon(Icons.notifications), onPressed: () {}),
         IconButton(

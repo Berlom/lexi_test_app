@@ -5,7 +5,7 @@ import '../repository/serie_test_repository.dart';
 import '../models/advanced_tile.dart';
 import '../models/serie_model.dart';
 
-class SerieViewModel {
+class SeriesViewModel {
   List<Serie> series = [];
   Set<String?> themes = {};
   List<AdvancedTile> advancedTile = [];
@@ -34,11 +34,11 @@ class SerieViewModel {
     return reponse;
   }
 
-  List<String?> getSeriesOfThemes(String? theme) {
-    List<String?> response = [];
+  List<Serie?> getSeriesOfThemes(String? theme) {
+    List<Serie?> response = [];
     for (var serie in series) {
       if (serie.series?.theme == theme) {
-        response.add(serie.series?.name);
+        response.add(serie);
       }
     }
     return response;
@@ -47,7 +47,8 @@ class SerieViewModel {
   AdvancedTile getTile(String theme) {
     List<AdvancedTile> series = [];
     for (var serie in getSeriesOfThemes(theme)) {
-      series.add(AdvancedTile(title: serie.toString()));
+      series.add(AdvancedTile(
+          title: serie!.series!.name.toString(), id: serie.series!.id));
     }
     return AdvancedTile(
         title: ParameterConfig["arabicTheme"][theme] ?? "",

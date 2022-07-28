@@ -74,9 +74,7 @@ class CodeEnLigneUserView extends StatelessWidget {
                             ),
                             Text("Plan de formation",
                                 style: TextStyle(
-                                    color: textColor,
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.bold)),
+                                    fontSize: 22, fontWeight: FontWeight.bold)),
                           ],
                         ),
                         SizedBox(
@@ -90,16 +88,13 @@ class CodeEnLigneUserView extends StatelessWidget {
                             ),
                             Text(
                               "Il vous reste ",
-                              style: TextStyle(fontSize: 15, color: textColor),
+                              style: TextStyle(fontSize: 15),
                             ),
                             Text("4H:51",
                                 style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: textColor)),
+                                    fontSize: 15, fontWeight: FontWeight.bold)),
                             Text(" de code en ligne.",
-                                style:
-                                    TextStyle(fontSize: 15, color: textColor))
+                                style: TextStyle(fontSize: 15))
                           ],
                         )
                       ],

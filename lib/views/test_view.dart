@@ -38,7 +38,7 @@ class TestView extends StatelessWidget {
                       ),
                     ],
                     border: Border.all(color: Colors.grey),
-                    color: Colors.white,
+                    // color: Colors.white,
                     borderRadius: BorderRadius.circular(20)),
                 child: SingleChildScrollView(
                   padding: EdgeInsets.all(5),
@@ -55,10 +55,8 @@ class TestView extends StatelessWidget {
                                   width: 25,
                                 ),
                                 Text("Mes Series",
-                                    style: TextStyle(
-                                        color: textColor,
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.bold)),
+                                    style:
+                                        Theme.of(context).textTheme.headline3),
                               ],
                             ),
                             SizedBox(
@@ -72,17 +70,16 @@ class TestView extends StatelessWidget {
                                 ),
                                 Text(
                                   "Il vous reste ",
-                                  style:
-                                      TextStyle(fontSize: 15, color: textColor),
+                                  style: Theme.of(context).textTheme.bodyText1,
                                 ),
                                 Text("4H:51",
-                                    style: TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold,
-                                        color: textColor)),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyText2!
+                                        .copyWith(fontWeight: FontWeight.bold)),
                                 Text(" de code en ligne.",
-                                    style: TextStyle(
-                                        fontSize: 15, color: textColor))
+                                    style:
+                                        Theme.of(context).textTheme.bodyText1)
                               ],
                             )
                           ],
@@ -90,8 +87,8 @@ class TestView extends StatelessWidget {
                         SizedBox(height: 25),
                         Divider(),
                         SizedBox(
-                          child: TestTilePage(),
                           height: 555,
+                          child: TestTilePage(),
                         ),
                       ]),
                 ),
@@ -99,12 +96,8 @@ class TestView extends StatelessWidget {
               SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => CodeEnLigneUserView()));
+                  Navigator.pop(context);
                 },
-                child: Text("< Retour"),
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0),
@@ -113,6 +106,7 @@ class TestView extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                     textStyle:
                         TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                child: Text("< Retour"),
               ),
               SizedBox(height: 30),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -123,7 +117,11 @@ class TestView extends StatelessWidget {
               SizedBox(height: 30),
               Text(
                 "© 2022-2019 TOUS DROITS RESERVES LEXI",
-                style: TextStyle(color: labelColor),
+                textAlign: TextAlign.center,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText1!
+                    .copyWith(color: labelColor),
               ),
             ],
           ),

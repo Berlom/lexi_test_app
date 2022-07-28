@@ -409,7 +409,7 @@ class Globals {
     headline3: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
     //dropdown
     labelMedium: TextStyle(fontSize: 16, letterSpacing: 2.0),
-    button: TextStyle(fontSize: 20, letterSpacing: 2.0),
+    button: TextStyle(fontSize: 20),
     //body
     bodyText1: TextStyle(fontSize: 16),
     bodyText2: TextStyle(fontSize: 18),

@@ -1,7 +1,9 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+import '../views/serie_view.dart';
 import '../vm/serie_test_view_model.dart';
 import '../models/advanced_tile.dart';
-import 'calendar_widget.dart';
 
 class TestTilePage extends StatefulWidget {
   const TestTilePage({Key? key}) : super(key: key);
@@ -11,10 +13,9 @@ class TestTilePage extends StatefulWidget {
 }
 
 class _TestTilePageState extends State<TestTilePage> {
-  SerieViewModel serieViewModel = SerieViewModel();
+  SeriesViewModel serieViewModel = SeriesViewModel();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     init();
   }
@@ -61,13 +62,17 @@ class _TestTilePageState extends State<TestTilePage> {
 
   Widget buildTile(AdvancedTile tile) => ListTile(
         leading: tile.icon != null ? Icon(tile.icon) : null,
-        title: Text(tile.title),
+        title: Text(
+          tile.title,
+          style: Theme.of(context).textTheme.bodyText2,
+        ),
         onTap: tile.tiles.isEmpty
             ? () => {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: ((context) => CalendarWidget())))
+                          builder: ((context) =>
+                              SerieView(id: tile.id.toString()))))
                 }
             : null,
       );

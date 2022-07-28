@@ -91,4 +91,9 @@ class Utils {
 
   static DateTime removeTime(DateTime dateTime) =>
       DateTime(dateTime.year, dateTime.month, dateTime.day);
+
+  static String displayQuestionNumber(
+      int questionNumber, int numberOfQuestion) {
+    return "$questionNumber/$numberOfQuestion";
+  }
 }

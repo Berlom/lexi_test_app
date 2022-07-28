@@ -103,27 +103,7 @@ class Footer extends StatelessWidget {
                 style: Theme.of(context).textTheme.headline3,
               ),
             ),
-            Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-              GestureDetector(
-                child: CircularIcon(icon: Icons.facebook),
-                onTap: () {
-                  Utils.openLink("https://www.facebook.com/lexi.tn/");
-                },
-              ),
-              GestureDetector(
-                child: CircularIcon(icon: SocialIcons.instagram),
-                onTap: () {
-                  Utils.openLink("https://www.instagram.com/lexitn/");
-                },
-              ),
-              GestureDetector(
-                child: CircularIcon(icon: SocialIcons.youtube_play),
-                onTap: () {
-                  Utils.openLink(
-                      "https://www.youtube.com/channel/UCohuXgeqgJHmmGVcxhM0ORw");
-                },
-              ),
-            ])
+            SocialLinks()
           ],
         ));
   }
@@ -145,5 +125,34 @@ class CircularIcon extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class SocialLinks extends StatelessWidget {
+  const SocialLinks({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+      GestureDetector(
+        child: CircularIcon(icon: Icons.facebook),
+        onTap: () {
+          Utils.openLink("https://www.facebook.com/lexi.tn/");
+        },
+      ),
+      GestureDetector(
+        child: CircularIcon(icon: SocialIcons.instagram),
+        onTap: () {
+          Utils.openLink("https://www.instagram.com/lexitn/");
+        },
+      ),
+      GestureDetector(
+        child: CircularIcon(icon: SocialIcons.youtube_play),
+        onTap: () {
+          Utils.openLink(
+              "https://www.youtube.com/channel/UCohuXgeqgJHmmGVcxhM0ORw");
+        },
+      ),
+    ]);
   }
 }

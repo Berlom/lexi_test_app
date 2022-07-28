@@ -22,31 +22,33 @@ class CalendarWidget extends StatelessWidget {
         backgroudColor: Colors.lightBlue,
         title: 'Agenda',
       ),
-      body: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                SizedBox(
-                  height: 700,
-                  child: SfCalendar(
-                    dataSource: EventDataSource(events),
-                    view: CalendarView.month,
-                    initialSelectedDate: DateTime.now(),
-                    //cellBorderColor: Colors.transparent,
-                    onLongPress: (details) {
-                      final provider =
-                          Provider.of<EventProvider>(context, listen: false);
-                      provider.setDate(details.date!);
-                      showModalBottomSheet(
-                        context: context,
-                        builder: (context) => TasksWidget(),
-                      );
-                    },
+      body: SingleChildScrollView(
+        child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  SizedBox(
+                    height: 700,
+                    child: SfCalendar(
+                      dataSource: EventDataSource(events),
+                      view: CalendarView.month,
+                      initialSelectedDate: DateTime.now(),
+                      //cellBorderColor: Colors.transparent,
+                      onLongPress: (details) {
+                        final provider =
+                            Provider.of<EventProvider>(context, listen: false);
+                        provider.setDate(details.date!);
+                        showModalBottomSheet(
+                          context: context,
+                          builder: (context) => TasksWidget(),
+                        );
+                      },
+                    ),
                   ),
-                ),
-              ])),
+                ])),
+      ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.redAccent,
         onPressed: () => Navigator.of(context)
