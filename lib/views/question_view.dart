@@ -1,8 +1,5 @@
 // ignore_for_file: prefer_const_constructors, must_be_immutable, prefer_const_literals_to_create_immutables
 
-import 'dart:convert';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../models/question_model.dart';
@@ -28,6 +25,8 @@ class _QuestionViewState extends State<QuestionView> {
             child: CircularProgressIndicator(),
           );
         } else {
+          QuestionViewModel.currentQuestionAnswer = questionVM.getResponseBody(
+              snapshot.data!.responsesBody, snapshot.data!.response.toString());
           return Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

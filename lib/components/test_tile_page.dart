@@ -13,7 +13,7 @@ class TestTilePage extends StatefulWidget {
 }
 
 class _TestTilePageState extends State<TestTilePage> {
-  SeriesViewModel serieViewModel = SeriesViewModel();
+  SerieViewModel serieViewModel = SerieViewModel();
   @override
   void initState() {
     super.initState();
@@ -25,9 +25,6 @@ class _TestTilePageState extends State<TestTilePage> {
     setState(() {
       serieViewModel.advancedTile = serieViewModel.getTiles().toList();
     });
-    // for (var element in serieViewModel.advancedTile) {
-    //   debugPrint(element.title);
-    // }
   }
 
   @override

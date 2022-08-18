@@ -17,7 +17,7 @@
 ///         License:   SIL ()
 ///         Homepage:  http://fortawesome.github.com/Font-Awesome/
 ///
-// ignore_for_file: constant_identifier_names
+// ignore_for_file: constant_identifier_names, file_names
 
 import 'package:flutter/widgets.dart';
 

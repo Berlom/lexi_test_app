@@ -1,6 +1,5 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, must_be_immutable, prefer_const_literals_to_create_immutables
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lexi_mobile/views/question_view.dart';
 import 'package:lexi_mobile/components/custom_appbar_view.dart';
@@ -27,6 +26,7 @@ class _SerieViewState extends State<SerieView> {
   void initState() {
     super.initState();
     serieVM.chronometer.start();
+    serieVM.getSolde();
   }
 
   @override
@@ -71,7 +71,7 @@ class _SerieViewState extends State<SerieView> {
                                           MainAxisAlignment.spaceAround,
                                       children: [
                                         Text(
-                                          "السؤال : ${Utils.displayQuestionNumber(serieVM.currentQuestion + 1, snapshot.data!.questions!.length)}",
+                                          "السؤال : ${Utils.displayQuestionNumber(serieVM.currentQuestion, snapshot.data!.questions!.length)}",
                                           style: Theme.of(context)
                                               .textTheme
                                               .bodyText1,
@@ -91,7 +91,8 @@ class _SerieViewState extends State<SerieView> {
                                     child: QuestionView(
                                         id: snapshot
                                             .data!
-                                            .questions![serieVM.currentQuestion]
+                                            .questions![
+                                                serieVM.currentQuestion - 1]
                                             .id),
                                   ),
                                   //next and correct
@@ -104,13 +105,19 @@ class _SerieViewState extends State<SerieView> {
                                       children: [
                                         CustomTextButton(
                                             text: "إصلاح",
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              serieVM
+                                                  .correctionHandler(context);
+                                            },
                                             color: primary),
                                         CustomTextButton(
                                             text: ">",
                                             onPressed: () {
                                               setState(() {
-                                                serieVM.nextQuestionHandler();
+                                                serieVM.nextQuestionHandler(
+                                                    snapshot.data!.questions!
+                                                        .length,
+                                                    context);
                                               });
                                             },
                                             color: primary)

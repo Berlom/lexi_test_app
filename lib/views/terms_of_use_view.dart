@@ -47,7 +47,7 @@ class TermOfUseView extends StatelessWidget {
                             iconColor: Color.fromARGB(255, 57, 189, 179)),
                         Term(
                             description:
-                                'لا يحق لأصحاب مؤسسات التكوين في مجال سياقة العربات والسلامة المرورية المنتفعين من هذه التطبيقة :',
+                                'لا يحق لأصحاب مؤسسات التكوين في مجال سياقة العربات والسلامة المرورية المنتفعين من هذه التطبيقة:',
                             iconColor: Color.fromARGB(255, 57, 189, 179)),
                         Padding(
                           padding: const EdgeInsets.only(right: 20),

@@ -53,7 +53,6 @@ class AppDrawer extends StatelessWidget {
                       MaterialPageRoute(
                         builder: (context) => CalendarWidget(),
                       ));
-                  //debugPrint("hello");
                 }),
             Divider(),
             DrawerTile(
@@ -65,7 +64,6 @@ class AppDrawer extends StatelessWidget {
                       MaterialPageRoute(
                         builder: (context) => CodeEnLigneUserView(),
                       ));
-                  //debugPrint("hello");
                 }),
             // onTap: () {
             //   Navigator.push(
@@ -73,7 +71,6 @@ class AppDrawer extends StatelessWidget {
             //       MaterialPageRoute(
             //         builder: (context) => CodeEnLigneUserView(),
             //       ));
-            //   //debugPrint("hello");
             // }),
           ],
         ));

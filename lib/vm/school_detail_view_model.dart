@@ -63,7 +63,7 @@ class SchoolDetailViewModel {
               height: 300,
               width: double.infinity,
               child: Image.asset(e),
-            ))
+            ) )
         .toList();
   }
 }

@@ -1,39 +1,35 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: unnecessary_const, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import '../components/custom_appbar_view.dart';
+import '/components/custom_appbar_view.dart';
+
 import '../components/drawer_user.dart';
 import '../components/footer.dart';
 import '../models/condidate_model.dart';
 import '../social_ icons.dart';
 import '../vm/condidate_view_model.dart';
-import 'TabBar_examen_view.dart';
 import 'code_en_ligne_user_view.dart';
+import 'history_user_data_table_view.dart';
 
-class ExamenBlancsView extends StatefulWidget {
-  const ExamenBlancsView({Key? key}) : super(key: key);
+class HistoryView extends StatefulWidget {
+  const HistoryView({Key? key}) : super(key: key);
 
   @override
-  State<ExamenBlancsView> createState() => _ExamenBlancsViewState();
+  State<HistoryView> createState() => _HistoryViewState();
 }
 
-class _ExamenBlancsViewState extends State<ExamenBlancsView> {
+class _HistoryViewState extends State<HistoryView> {
   CondidateViewModel condidateViewModel = CondidateViewModel();
   CondidateModel? condidate;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
+        title: "Historique",
         backgroudColor: Colors.lightBlue,
-        title: 'Examens Blancs',
       ),
       drawer: AppDrawer(),
-      body: Column(
-        children: [
-          buildBody(),
-        ],
-      ),
+      body: buildBody(),
     );
   }
 
@@ -45,11 +41,10 @@ class _ExamenBlancsViewState extends State<ExamenBlancsView> {
             return Center(child: CircularProgressIndicator());
           } else {
             return SingleChildScrollView(
-              scrollDirection: Axis.vertical,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(height: 30),
+                  SizedBox(height: 35),
                   Container(
                     padding: EdgeInsets.all(5),
                     margin: EdgeInsets.all(5),
@@ -78,7 +73,7 @@ class _ExamenBlancsViewState extends State<ExamenBlancsView> {
                                     SizedBox(
                                       width: 25,
                                     ),
-                                    Text("Mes examens",
+                                    Text("Mon historique",
                                         style: TextStyle(
                                             fontSize: 22,
                                             fontWeight: FontWeight.bold)),
@@ -110,9 +105,12 @@ class _ExamenBlancsViewState extends State<ExamenBlancsView> {
                                 )
                               ],
                             ),
+                            SizedBox(height: 25),
                             Divider(),
-                            SizedBox(height: 10),
-                            TabBarExamenView(),
+                            SizedBox(
+                              height: 555,
+                              child: HistoryDataTable(),
+                            ),
                           ]),
                     ),
                   ),
@@ -146,6 +144,7 @@ class _ExamenBlancsViewState extends State<ExamenBlancsView> {
                     "© 2022-2019 TOUS DROITS RESERVES LEXI",
                     style: TextStyle(color: Colors.grey, fontSize: 14),
                   ),
+                  SizedBox(height: 10)
                 ],
               ),
             );

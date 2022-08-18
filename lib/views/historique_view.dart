@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 import '../components/custom_appbar_view.dart';
 import '../components/drawer_user.dart';
@@ -24,22 +23,22 @@ class HistoriqueView extends StatelessWidget {
             children: [
               Text("Historique"),
               ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => CodeEnLigneUserView()));
-                    },
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0),
-                        ),
-                        primary: Colors.grey.shade700,
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                        textStyle: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold)),
-                    child: Text("< Retour")),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CodeEnLigneUserView()));
+                  },
+                  style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),
+                      primary: Colors.grey.shade700,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                      textStyle:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  child: Text("< Retour")),
             ],
           )),
     );

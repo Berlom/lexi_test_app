@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // ignore: prefer_const_constructors
+      
       appBar: CustomAppBar(
         backgroudColor: Colors.lightBlue,
         title: 'Lexi',

@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         builder: (_, ThemeData current, __) {
           return MaterialApp(
             title: "My First App",
-            home: LandingPageView(),
+            home: HomePage(),
             theme: current,
           );
         },

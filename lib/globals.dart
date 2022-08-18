@@ -411,17 +411,19 @@ class Globals {
     labelMedium: TextStyle(fontSize: 16, letterSpacing: 2.0),
     button: TextStyle(fontSize: 20),
     //body
-    bodyText1: TextStyle(fontSize: 16),
-    bodyText2: TextStyle(fontSize: 18),
+    bodyText1: TextStyle(fontSize: 14),
+    bodyText2: TextStyle(fontSize: 16),
   );
 
   static ThemeData darkMode = ThemeData.dark().copyWith(
+      iconTheme: IconThemeData(color: Colors.white),
       textTheme: textTheme.apply(
           displayColor: Colors.white,
           bodyColor: Colors.white,
           decorationColor: Colors.white));
 
   static ThemeData lightMode = ThemeData.light().copyWith(
+    iconTheme: IconThemeData(color: Colors.black),
     textTheme: textTheme.apply(
         displayColor: Colors.black,
         bodyColor: Colors.black,

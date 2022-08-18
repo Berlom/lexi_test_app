@@ -20,8 +20,6 @@ class Utils {
   static openLink(String url) async {
     if (await canLaunchUrlString(url)) {
       await launchUrlString(url);
-    } else {
-      debugPrint("invalid url");
     }
   }
 
@@ -47,9 +45,14 @@ class Utils {
         Color.fromARGB(255, 57, 189, 179);
     }
     SnackBar snackbar = SnackBar(
-      content: Text(content),
+      content: Text(content,
+          textAlign: TextAlign.center,
+          style: Theme.of(context)
+              .textTheme
+              .bodyText2!
+              .copyWith(color: Colors.white)),
       backgroundColor: snackColor,
-      duration: Duration(seconds: 2),
+      duration: Duration(seconds: 3),
       elevation: 10,
       behavior: SnackBarBehavior.floating,
       margin: EdgeInsets.all(5),

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors_in_immutables, unnecessary_const, prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 
 import 'custom_images.dart';
@@ -9,15 +11,15 @@ class CodeEnLigneUserTiles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
-      margin: EdgeInsets.all(5),
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.all(5),
       decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.3),
               spreadRadius: 1,
               blurRadius: 2,
-              offset: Offset(0, 2), // changes position of shadow
+              offset: const Offset(0, 2), // changes position of shadow
             ),
           ],
           border: Border.all(color: Colors.grey),
@@ -32,14 +34,14 @@ class CodeEnLigneUserTiles extends StatelessWidget {
             height: 90,
             fit: BoxFit.cover,
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(data["name"],
-                    style: TextStyle(
-                        color: Color.fromARGB(255, 19, 188, 175),
+                    style: const TextStyle(
+                        color: const Color.fromARGB(255, 19, 188, 175),
                         fontSize: 22,
                         fontWeight: FontWeight.w500)),
               ],
